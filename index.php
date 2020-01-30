@@ -6,10 +6,12 @@
  * 
  */
 require_once "core/database.php";
+require_once 'core/motor_plantilla.php';
 
+//echo $twig->render('index.html', ['titulo' => 'Prueba', 'titulo2' => 'Titulo generado con Twig 3']);
 if(!isset($_GET['c'])){
     require_once "controller/HomeController.php";
-    $controlador = new HomeController();
+    $controlador = new HomeController($twig);
     //call_user_func(array($controlador,"Inicio"));
 }else{
     $controlador = $_GET['c'];

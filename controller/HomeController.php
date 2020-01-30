@@ -4,14 +4,12 @@ class HomeController
 {
     private $modelo;
 
-    public function __CONSTRUCT(){
-        $this->modelo=new HomeModel();
+    public function __CONSTRUCT($twig){
+        $this->index($twig);
     }
 
-    public function Inicio(){
-        require_once "view/partials/head.php";
-        require_once "view/home/principal.php";
-        require_once "view/partials/footer.php";
+    public function index($twig){        
+        echo $twig->render('inicio/index.html', ['titulo' => 'Prueba con twig']);              
     }
 
 }
