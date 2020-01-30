@@ -1,6 +1,6 @@
 <?php
 
-require_once "model/ciudad.php";
+require_once "model/CiudadModel.php";
 
 class CiudadController{
 
@@ -10,7 +10,7 @@ class CiudadController{
         $this->modelo=new Ciudad;
     }
 
-    public function Inicio(){
+    public function index(){
        require_once "view/partials/head.php";
         require_once "view/ciudad/index.php";
         require_once "view/partials/footer.php";

@@ -1,22 +1,20 @@
 <?php
 
-class Database{
+class Database 
+{
+    private const SERVER = "localhost";
+    private const USUARIO = "juandba";
+    private const CLAVE = "admin";
+    private const DBNAME = "biblioteca";
 
-    const server = "localhost";
-    const usuario = "postgres";
-    const clave = "123";
-    const dbname = "mvc";
-
-    public static function Conectar() {
+    public static function conectar() {
         try {
-            $conexion = new PDO("pgsql:host=" . self::server . ";dbname=" . self::dbname . ";", self::usuario, self::clave);
-
+            $conexion = new PDO("pgsql:host=" . self::SERVER . ";dbname=" . self::DBNAME . ";", self::USUARIO, self::CLAVE);
+            # Muestra errores del postgresql
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
             return $conexion;
         } catch (PDOException $e) {
             return "Fallo" . $e->getMessage();
         }
     }
-
 }

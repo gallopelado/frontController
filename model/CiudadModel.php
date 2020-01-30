@@ -3,14 +3,8 @@
 class Ciudad{
 
     private $pdo;
-
     private $id_ciudad;
     private $ciu_descri;
-    //private $pro_mar;    
-    //private $pro_cos;
-    //private $pro_pre;
-    //private $pro_can;
-    //private $pro_img;
 
     public function __CONSTRUCT(){
         $this->pdo = Database::Conectar();
@@ -35,7 +29,7 @@ class Ciudad{
 
     public function carga_tabla(){
         try{
-            $consulta=$this->pdo->prepare("SELECT * FROM ciudad ORDER BY id_ciudad;");
+            $consulta=$this->pdo->prepare("SELECT * FROM ciudad ORDER BY id;");
             $consulta->execute();
             return $consulta->fetchAll(PDO::FETCH_OBJ);
         }catch(Exception $e){

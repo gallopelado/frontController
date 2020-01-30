@@ -1,10 +1,11 @@
 <?php
-require_once "model/ciudad.php";
-class HomeController{
+require_once "model/HomeModel.php";
+class HomeController
+{
     private $modelo;
 
     public function __CONSTRUCT(){
-        $this->modelo=new Ciudad();
+        $this->modelo=new HomeModel();
     }
 
     public function Inicio(){
